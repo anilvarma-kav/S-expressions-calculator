@@ -10,38 +10,28 @@ Requirements
 How to run(MacOS or Linux)
 =======================
 
-**Step 1:** Download the repository uisng 
+**Step 1:** Make calc.py execultable
 
 ```
-virtualenv -p <path_to_python2.7> <env_name>
+chmod +x calc.py
 ```
 
-*NOTE : the above command assumes that the python3 is installed in the system.*
+*NOTE : the above command assumes that the python3 is installed in the system and assuming you are in the directory where calc.py is located.*
 
-**Step 2:** Activate the virtual environment
-
-```
-source <env_name>/bin/activate
-```
-*The name of the activated environment will appear on the left of the prompt.* 
-
-**Step 3:** Install the HOME package outside virtual environment but make sure that the virtual environment is active
+**Step 2:** Add/change the shebang line(path to python3 interpretter) - Add it at the top of the script
 
 ```
-pip install git+https://github.com/ListerLab/HOME.git
+#!/usr/bin/python3
+```
+*default shebang line for Python 3. modify it if your python 3 path is different* 
 
-or
+**Step 3:** run the command, remember program takes single argument which must be an S-expression
 
-git clone https://github.com/ListerLab/HOME.git
-cd ./HOME
-pip install -r requirements.txt
-python setup.py install
 ```
-***For conda users**
+$ ./calc.py 123
+123
+
+$ ./calc.py "(add 12 12)"
+24
 ```
-git clone https://github.com/ListerLab/HOME.git
-cd ./HOME
-conda env create    *assuming the conda environment is activated and R is already installed in it*
-source activate HOMEenv
-python setup.py install
-```
+
