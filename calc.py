@@ -19,7 +19,6 @@ def multiply(*params):
                 r = r * add(*param[1:])
         else:
             r = r * int(param)
-            print(r)
     return r
 
 
